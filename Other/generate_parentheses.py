@@ -43,11 +43,11 @@ def combinations(result, open_left, close_left, combination):
         # no more open parentheses, so all left parentheses must be closed (just add the missing close parentheses)
         result.append(combination + (')' * close_left))
     else:
-        combinations(result, open_left - 1, close_left, combination + '(')
+        combinations(result, open_left - 1, close_left, f'{combination}(')
 
         # check if there is a pair for this close parenthesis
         if open_left < close_left:
-            combinations(result, open_left, close_left - 1, combination + ')')
+            combinations(result, open_left, close_left - 1, f'{combination})')
 
 
 ###########

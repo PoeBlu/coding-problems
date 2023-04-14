@@ -21,7 +21,7 @@ Dynamic Programming Solution.
 def longest_common_substring(str1, str2):
     n, m = len(str1), len(str2)
     # instead of creating a whole dp table, use only 2 rows (current and previous row)
-    curr = [0 for j in range(m + 1)]
+    curr = [0 for _ in range(m + 1)]
     prev = []
     max_length = 0
     max_idx = 0
@@ -29,7 +29,7 @@ def longest_common_substring(str1, str2):
     for i in range(1, n + 1):
         # save the previous row and create the current row
         prev = curr
-        curr = [0 for j in range(m + 1)]
+        curr = [0 for _ in range(m + 1)]
 
         for j in range(1, m + 1):
             if str1[i - 1] == str2[j - 1]:

@@ -37,11 +37,7 @@ def min_cost_coloring(dp):
 
         for j in range(m):
             # find result with different color
-            if j != prev_min[0][1]:
-                dp[i][j] += prev_min[0][0]
-            else:
-                dp[i][j] += prev_min[1][0]
-
+            dp[i][j] += prev_min[0][0] if j != prev_min[0][1] else prev_min[1][0]
             # save the current result if smaller than the current 2
             if curr_min[0][0] > dp[i][j]:
                 curr_min[1] = curr_min[0]

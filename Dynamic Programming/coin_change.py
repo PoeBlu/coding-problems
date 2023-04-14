@@ -32,7 +32,7 @@ def coin_change_1(coins, amount):
         return -1
 
     max_value = amount + 1  # use this instead of math.inf
-    dp = [max_value for i in range(max_value)]
+    dp = [max_value for _ in range(max_value)]
     dp[0] = 0
 
     for i in range(1, max_value):
@@ -41,9 +41,7 @@ def coin_change_1(coins, amount):
                 # search on previous positions for min coins needed
                 dp[i] = min(dp[i], dp[i - c] + 1)
 
-    if (dp[amount] == max_value):
-        return -1
-    return dp[amount]
+    return -1 if (dp[amount] == max_value) else dp[amount]
 
 
 ##############
@@ -58,7 +56,7 @@ def coin_change_2(coins, amount):
 
     max_value = amount + 1
     max_coin = min(max_value, max(coins) + 1)
-    dp = [max_value for i in range(max_coin)]
+    dp = [max_value for _ in range(max_coin)]
     dp[0] = 0
 
     for i in range(1, max_value):
@@ -70,9 +68,7 @@ def coin_change_2(coins, amount):
                 # search on previous positions for min coins needed
                 dp[i_mod] = min(dp[i_mod], dp[(i - c) % max_coin] + 1)
 
-    if (dp[amount % max_coin] == max_value):
-        return -1
-    return dp[amount % max_coin]
+    return -1 if (dp[amount % max_coin] == max_value) else dp[amount % max_coin]
 
 
 ###########

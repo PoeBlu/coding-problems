@@ -29,9 +29,7 @@ Simple tree traversal solution.
 from tree_helpers import TreeNode
 
 def count_unival_trees(tree):
-    if tree is None:
-        return 0
-    return total_unival_trees(tree)[0]
+    return 0 if tree is None else total_unival_trees(tree)[0]
 
 def total_unival_trees(node):
     left_value = None

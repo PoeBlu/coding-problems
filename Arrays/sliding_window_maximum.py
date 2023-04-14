@@ -30,8 +30,6 @@ def max_el_subarrays(arr, k):
         return -1
 
     deq = deque()
-    result = []
-
     # starting sliding window
     for i in range(min(k, n)):
         # start from the end and remove all previous indicies
@@ -42,10 +40,7 @@ def max_el_subarrays(arr, k):
         # add the current index on back/right
         deq.append(i)
 
-    # add the biggest element in the result array
-    # the biggest element is always located in front/left
-    result.append(arr[deq[0]])
-
+    result = [arr[deq[0]]]
     # move element by element (slide the window)
     for i in range(k, n):
         # remove the front index if it's outside the window

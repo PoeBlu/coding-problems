@@ -48,11 +48,7 @@ def search(node, k):
 
     # check current node
     k = left[0] - 1
-    if k == 0:
-        return (k, node)
-
-    # check right
-    return search(node.right, k)
+    return (k, node) if k == 0 else search(node.right, k)
 
 
 ###########

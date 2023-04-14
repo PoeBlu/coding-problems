@@ -22,7 +22,7 @@ In C/C++, the Space complexity will be O(1).
 ############
 
 def reverse_vowels(sentence):
-    arr = [c for c in sentence] # or just arr = list(sentence)
+    arr = list(sentence)
 
     vowels = {
         'a': True, 'A': True,
@@ -37,15 +37,11 @@ def reverse_vowels(sentence):
 
     while True:
         # find a vowel from left
-        while left < right:
-            if arr[left] in vowels:
-                break
+        while left < right and arr[left] not in vowels:
             left += 1
 
         # find a vowel from right
-        while left < right:
-            if arr[right] in vowels:
-                break
+        while left < right and arr[right] not in vowels:
             right -= 1
 
         if left >= right:

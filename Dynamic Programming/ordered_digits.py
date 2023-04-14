@@ -33,7 +33,7 @@ And take the minimum value from the previous position (but smaller than the curr
 
 def ordered_digits(number):
     n = len(number)
-    dp = [[0 for j in range(10)] for i in range(2)]
+    dp = [[0 for _ in range(10)] for _ in range(2)]
 
     for i in range(n):
         min_prev = float('inf')

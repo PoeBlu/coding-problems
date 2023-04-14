@@ -41,7 +41,7 @@ def find_min_path(board, start, end):
     visited = []
     for row in range(n):
         visited.append([])
-        for el in range(m):
+        for _ in range(m):
             visited[row].append(False)
 
     queue = deque()

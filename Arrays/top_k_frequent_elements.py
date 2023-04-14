@@ -130,10 +130,7 @@ def pivoting(arr, left, right):
     pivot = right
     new_pivot = left
 
-    # iterate the whole array (without the last element)
-    # and put all elements bigger than the pivot (last element) in the first K spots
-    # with the new_pivot we're "counting" how many bigger elements are there
-    for j in range(left, right):
+    for j in range(new_pivot, pivot):
         if arr[j][0] > arr[pivot][0]:
             swap(arr, new_pivot, j)
             new_pivot += 1

@@ -34,8 +34,8 @@ def word_break(sentence, words):
     if (n == 0) or (w == 0):
         return None
 
-    dw = [-1 for i in range(n + 1)]
-    dp = [math.inf for i in range(n + 1)]
+    dw = [-1 for _ in range(n + 1)]
+    dp = [math.inf for _ in range(n + 1)]
     dp[0] = 0
     matched_indices = [0]
 
@@ -99,7 +99,7 @@ def word_break_backtracking(sentence, words):
     result = deque()
 
     # go letter by letter and save the new letter in subsentence
-    while (i < n) or (len(subsentence) != 0):
+    while i < n or subsentence != "":
         # if there are no left letters in the sentence, then this combination is not valid
         # remove the last word from the results and continue from that word
         if i == n:

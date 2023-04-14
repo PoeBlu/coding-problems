@@ -31,7 +31,7 @@ def max_diference_subll(ll, k):
     start, end = ll, ll
 
     # move the end pointer for k-1 places
-    for i in range(1, k):
+    for _ in range(1, k):
         end = end.next
         if end is None:
             return None

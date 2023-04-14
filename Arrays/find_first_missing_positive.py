@@ -42,12 +42,7 @@ def find_first_missing(a):
             # mark element as found for the first time
             a[idx] = -val
 
-    # find the first non-negative position
-    for i in range(n):
-        if a[i] > 0:
-            return i + 1
-
-    return n + 1
+    return next((i + 1 for i in range(n) if a[i] > 0), n + 1)
 
 
 ###########

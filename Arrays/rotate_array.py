@@ -75,9 +75,7 @@ def rotate_array_2(arr, k, right = True):
 
 # greatest common divisor
 def gcd(a, b):
-    if b == 0:
-        return a
-    return gcd(b, a % b)
+    return a if b == 0 else gcd(b, a % b)
 
 
 ###########

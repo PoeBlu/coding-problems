@@ -29,10 +29,7 @@ For each number tries to find the smaller and the bigger consequence numbers, an
 ############
 
 def largest_range(array):
-    visited = {}
-    for el in array:
-        visited[el] = False
-
+    visited = {el: False for el in array}
     max_range = [array[0], array[0]]
     for el in array:
         if visited[el]:

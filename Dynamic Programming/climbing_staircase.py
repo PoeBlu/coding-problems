@@ -26,7 +26,7 @@ Dynamic Programing solution.
 ############
 
 def climbing_staircase(steps, height):
-    dp = [0 for i in range(height)]
+    dp = [0 for _ in range(height)]
 
     # add all steps into dp
     for s in steps:

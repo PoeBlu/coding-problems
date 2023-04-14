@@ -39,8 +39,7 @@ def letter_combinations(digits):
         new_combinations = []
         for combination in prev_combinations:
             # use the mappings and create new combinations
-            for mapping in mappings[digit]:
-                new_combinations.append(combination + mapping)
+            new_combinations.extend(combination + mapping for mapping in mappings[digit])
         # save the newest combinations
         prev_combinations = new_combinations
 

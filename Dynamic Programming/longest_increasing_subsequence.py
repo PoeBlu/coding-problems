@@ -28,7 +28,7 @@ def longest_increasing_subsequence_1(nums):
     n = len(nums)
     if n == 0:
         return 0
-    dp = [1 for i in range(n)]
+    dp = [1 for _ in range(n)]
     max_val = 1
 
     # run dp
@@ -69,7 +69,7 @@ def longest_increasing_subsequence_2(nums):
             # bigger element than the current wasn't found
             arr = []
             if k != 0:
-                arr = [i for i in dp[-1]] # make a copy
+                arr = list(dp[-1])
             arr.append(nums[i])
 
             dp.append(arr)

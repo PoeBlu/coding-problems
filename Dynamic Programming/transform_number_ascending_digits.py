@@ -31,13 +31,10 @@ def operations(number):
         curr_dp = [min(diff(i, j), 10 - diff(i, j)) for j in range(10)]
         for j in range(10):
             # find the min value for the previous digit and add it to the current value
-            curr_dp[j] += min(prev_dp[0 : j + 1])
+            curr_dp[j] += min(prev_dp[:j + 1])
         prev_dp = curr_dp
 
-    # min value from the last digit
-    min_dist = min(prev_dp)
-
-    return min_dist
+    return min(prev_dp)
 
 
 ###########

@@ -36,7 +36,7 @@ def permutations(nums):
 
 def permute(result, nums, permutation):
     if len(nums) == 0:
-        result.append([num for num in permutation])
+        result.append(list(permutation))
     else:
         for num in list(nums): # create a new object with the same values because nums will be changed later
             nums.remove(num)

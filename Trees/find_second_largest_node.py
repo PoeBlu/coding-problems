@@ -22,13 +22,10 @@ import math
 def find_second_largest(root):
     arr = [TreeNode(-math.inf), TreeNode(-math.inf)]
     traverse_tree(root, arr)
-    if arr[1] == -math.inf:
-        # the tree has 0 or 1 elements
-        return None
-    return arr[1]
+    return None if arr[1] == -math.inf else arr[1]
 
 def traverse_tree(node, arr):
-    if node == None:
+    if node is None:
         return
 
     if arr[0].val < node.val:

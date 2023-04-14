@@ -19,7 +19,7 @@ Much faster and doesn't use extra space.
 
 def unique_paths_dp(n, m):
     # all values at i=0 should be 1 (the rest are not important, they'll be computed later)
-    dp = [[1 for j in range(m)] for i in range(n)]
+    dp = [[1 for _ in range(m)] for _ in range(n)]
 
     # calculate only inner values
     for i in range(1, n):

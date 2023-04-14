@@ -43,18 +43,6 @@ def longest_common_prefix(strs):
                 break
 
     return lcp[:lcp_idx]
-    '''
-    # if you like string manipulations, you can use this code
-    # i don't like string manipulations in Python because they're immutable
-    lcp = strs[0]
-    for i in range(1, n):
-        lcp = lcp[:len(strs[i])]
-        for j in range(len(lcp)):
-            if lcp[j] != strs[i][j]:
-                lcp = lcp[:j]
-                break
-    return lcp
-    '''
 
 
 ###########

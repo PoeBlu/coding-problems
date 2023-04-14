@@ -18,7 +18,7 @@ Backtracking solution.
 ############
 
 def place_n_queens(n):
-    columns = [False for i in range(n)]
+    columns = [False for _ in range(n)]
     order = []
 
     return backtracking(columns, order)

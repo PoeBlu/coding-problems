@@ -28,9 +28,7 @@ Use hashset and make all combinations.
 ############
 
 def count_positives(numbers):
-    results = set()
-    results.add(0)
-
+    results = {0}
     # make all combinations
     for num in numbers:
         temp = set()    # use a temporary hashset for the newest results
@@ -39,13 +37,7 @@ def count_positives(numbers):
             temp.add(res - num)
         results = temp  # replace the results
 
-    # count unique positives
-    count = 0
-    for res in results:
-        if res >= 0:
-            count += 1
-
-    return count
+    return sum(res >= 0 for res in results)
 
 
 ###########

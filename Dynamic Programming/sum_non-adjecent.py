@@ -57,13 +57,7 @@ def sum_non_adjacent(arr):
     for i in range(3, n):
         temp = 0
 
-        if arr[i] > 0:
-            # take this number, because it's positive and the sum will be bigger
-            temp = max(sums[0], sums[1]) + arr[i]
-        else:
-            # don't take this number, because the sum will be same or smaller
-            temp = max(sums)
-
+        temp = max(sums[0], sums[1]) + arr[i] if arr[i] > 0 else max(sums)
         # remove the first sum
         sums = sums[1:] + [temp]
 

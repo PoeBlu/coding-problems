@@ -22,20 +22,13 @@ The second solution is simpler and it's same as find_kth_smallest_node_bst.py bu
 from tree_helpers import TreeNode
 
 def find_second_largest_bst_1(root):
-    if root == None:
-        return None
-    return search_1(root, False)
+    return None if root is None else search_1(root, False)
 
 def search_1(node, visited_left):
     # the right child is bigger than the current node
     if node.right is not None:
         result = search_1(node.right, visited_left)
-        if result is None:
-            # return this node, because the bottom is reached and the leaf is bigger than this node
-            return node
-        # result node is found
-        return result
-
+        return node if result is None else result
     # if this node is a part of the left subtree and this node doesn't have right child
     # then this is the solution
     if visited_left:
@@ -43,11 +36,7 @@ def search_1(node, visited_left):
 
     # go to the left subtree
     # the current node is bigger than all nodes in the left subtree, search for the biggest one there
-    if node.left is not None:
-        return search_1(node.left, True)
-
-    # this is a tree leaf (the right most element)
-    return None
+    return search_1(node.left, True) if node.left is not None else None
 
 
 ##############
@@ -58,7 +47,7 @@ def find_second_largest_bst_2(root):
     return search_2(root, 2)[1]
 
 def search_2(node, k):
-    if node == None:
+    if node is None:
         return (k, None)
 
     # check right
@@ -68,11 +57,7 @@ def search_2(node, k):
 
     # check current node
     k = right[0] - 1
-    if k == 0:
-        return (0, node)
-
-    # check left
-    return search_2(node.left, k)
+    return (0, node) if k == 0 else search_2(node.left, k)
 
 
 ###########

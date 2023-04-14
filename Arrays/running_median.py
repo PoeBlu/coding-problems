@@ -62,7 +62,6 @@ def running_median(stream):
         if left_heap.count() == 0:
             # enters here only for the first element of the streen
             left_heap.push(number)
-        # balance the heaps
         elif left_heap.count() > right_heap.count():
             # in this case the right_heap should get a new element (so both heaps will have same number of elements)
             if left_heap.peek() > number:
@@ -71,14 +70,12 @@ def running_median(stream):
                 left_heap.push(number)
             else:
                 right_heap.push(number)
+        elif right_heap.peek() < number:
+            # move an element from right to left heap
+            left_heap.push(right_heap.pop())
+            right_heap.push(number)
         else:
-            # in this case the left_heap should get a new element (so the left_heap will have 1 more element)
-            if right_heap.peek() < number:
-                # move an element from right to left heap
-                left_heap.push(right_heap.pop())
-                right_heap.push(number)
-            else:
-                left_heap.push(number)
+            left_heap.push(number)
 
         if left_heap.count() > right_heap.count():
             # if left_heap is bigger then odd elements from the stream are processed

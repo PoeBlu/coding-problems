@@ -26,7 +26,7 @@ Find more details here: https://www.geeksforgeeks.org/printing-longest-common-su
 def longest_common_subsequence(str1, str2):
     n, m = len(str1), len(str2)
     # create dp matrix
-    dp = [[0 for j in range(m + 1)] for i in range(n + 1)]
+    dp = [[0 for _ in range(m + 1)] for _ in range(n + 1)]
 
     # run dp
     for i in range(1, n + 1):

@@ -33,10 +33,10 @@ def max_area(height):
 
         # take the smaller side and search for a bigger height on that side
         if left < right:
-            while (l < r) and (left >= height[l]):
+            while l < r and left >= left:
                 l += 1
         else:
-            while (l < r) and (right >= height[r]):
+            while l < r and right >= right:
                 r -= 1
 
     return max_height

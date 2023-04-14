@@ -30,8 +30,8 @@ def interleaving_strings_1(A, B, C):
     nA, nB, nC = len(A), len(B), len(C)
     if nA + nB != nC:
         return 0
-    
-    dp = [[0 for j in range(nB + 1)] for i in range(nA + 1)]
+
+    dp = [[0 for _ in range(nB + 1)] for _ in range(nA + 1)]
 
     # starting values
     dp[0][0] = 1
@@ -45,7 +45,7 @@ def interleaving_strings_1(A, B, C):
     for i in range(1, nB + 1):
         if B[i - 1] == C[i - 1]:
             dp[0][i] = dp[0][i - 1]
-    
+
     # run dp
     for i in range(1, nA + 1):
         for j in range(1, nB + 1):
@@ -67,8 +67,8 @@ def interleaving_strings_2(A, B, C):
     nA, nB, nC = len(A), len(B), len(C)
     if nA + nB != nC:
         return 0
-    
-    dp = [0 for j in range(nB + 1)]
+
+    dp = [0 for _ in range(nB + 1)]
 
     # starting values
     dp[0] = 1
@@ -76,7 +76,7 @@ def interleaving_strings_2(A, B, C):
     for i in range(1, nB + 1):
         if B[i - 1] == C[i - 1]:
             dp[i] = dp[i - 1]
-    
+
     # run dp
     for i in range(1, nA + 1):
         if A[i - 1] != C[i - 1]:

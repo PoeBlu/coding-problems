@@ -27,11 +27,7 @@ def count_divisibles_in_range(start, end, n):
     # find the next start number divisable by n
     start += (n - (start % n)) % n
 
-    if start > end:
-        # in this case there are no numbers divisable by n
-        return 0
-
-    return 1 + ((end - start) // n)
+    return 0 if start > end else 1 + ((end - start) // n)
 
 
 ###########

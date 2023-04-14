@@ -36,7 +36,7 @@ def num_smses(sequence):
 
     # dp starting values, check all 4 possible starting combinations
     for i in range(min(4, n)):
-        if is_valid(sequence[0 : i+1]):
+        if is_valid(sequence[: i + 1]):
             dp[i] = 1
 
     # run dp
@@ -61,10 +61,7 @@ def is_valid(sequence):
     if ((ch >= '2' and ch <= '6') or ch == '8') and (len(sequence) < 4):
         return True
 
-    if (ch == '7') or (ch == '9'):
-        return True
-
-    return False
+    return ch in ['7', '9']
 
 
 ###########

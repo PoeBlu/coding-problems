@@ -31,9 +31,9 @@ def convert(s, num_rows):
     res = ''
     cycle = 2 * (num_rows - 1)
 
-    for i in range(0, num_rows):
+    for i in range(num_rows):
         steps = cycle - 2 * i
-        if (i == 0) or (i == num_rows - 1):
+        if i in [0, num_rows - 1]:
             # if first or last row, make a whole cycle
             steps = cycle
 

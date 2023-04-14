@@ -34,14 +34,10 @@ def find_missing_number(arr1, arr2):
     mod = 10000	    # this can be every number, this should be true max_length * mod < max_integer
     sum_diff = 0
     mod_diff = 0
-    i = 0
-
-    while i < n:
+    for i in range(n):
         # this is in case if we have too big numbers and to big arrays
         sum_diff += arr1[i] % mod - arr2[i] % mod
         mod_diff += arr1[i] // mod - arr2[i] // mod
-        i += 1
-
     # don't forget the last element from the first array!
     sum_diff += arr1[n] % mod
     mod_diff += arr1[n] // mod
@@ -56,12 +52,8 @@ def find_missing_number(arr1, arr2):
 def find_missing_number_2(arr1, arr2):
     n = len(arr2)
     missing = 0
-    i = 0
-
-    while i < n:
+    for i in range(n):
         missing ^= arr1[i] ^ arr2[i]
-        i += 1
-
     # don't forget the last element from the first array!
     missing ^= arr1[n]
 

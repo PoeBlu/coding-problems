@@ -40,10 +40,10 @@ def find_intersecting_node(ll1, ll2):
     # move only one of the lls for the difference
     m = min(count1, count2)
 
-    for i in range(count1 - m):
+    for _ in range(count1 - m):
         ll1 = ll1.next
 
-    for i in range(count2 - m):
+    for _ in range(count2 - m):
         ll2 = ll2.next
 
     # find the intersecting node
@@ -52,11 +52,8 @@ def find_intersecting_node(ll1, ll2):
         # if the values are different, this is not the intersecting node
         if (ll1.val != ll2.val):
             intersect = None
-        else:
-            # if the values are equal and there is no an intersecting node from before
-            # then this is the intersecting node
-            if (intersect == None):
-                intersect = ll1
+        elif intersect is None:
+            intersect = ll1
 
         ll1 = ll1.next
         ll2 = ll2.next

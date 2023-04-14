@@ -47,13 +47,13 @@ def spiral_matrix(matrix):
     x, y = 0, -1
 
     while len(res) < total:
-        for i in range(m):
+        for _ in range(m):
             y += yDir
             res.append(matrix[x][y])
         m -= 1 # decrease horizontal moving steps
         yDir *= -1 # change the Y direction
 
-        for i in range(n):
+        for _ in range(n):
             x += xDir
             res.append(matrix[x][y])
         n -= 1 # decrease vertical moving steps

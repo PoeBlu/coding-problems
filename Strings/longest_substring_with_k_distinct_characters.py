@@ -26,7 +26,6 @@ def longest_substring_with_distinct_characters(s, k):
         if s[i] in letters:
             # if this letter exists then only increase the counter and length
             letters[s[i]] += 1
-            length += 1
         else:
             # if this letter doesn't exist then remove all distinct letters from the front
             # so the count of distinct letters will be k-1
@@ -41,8 +40,7 @@ def longest_substring_with_distinct_characters(s, k):
 
             # add the new letter in the dictionary
             letters[s[i]] = 1
-            length += 1
-
+        length += 1
         # check if this length is the longest one
         longest = max(longest, length)
 

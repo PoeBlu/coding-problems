@@ -33,17 +33,8 @@ def set_matrix_zeroes(matrix):
         return
     m = len(matrix[0])
 
-    # check if 0 exist in first row
-    is_row = False
-    for j in range(m):
-        if matrix[0][j] == 0:
-            is_row = True
-    # check if 0 exist in first column
-    is_col = False
-    for i in range(n):
-        if matrix[i][0] == 0:
-            is_col = True
-
+    is_row = any(matrix[0][j] == 0 for j in range(m))
+    is_col = any(matrix[i][0] == 0 for i in range(n))
     # find which columns and rows should be 0
     for i in range(1, n):
         for j in range(1, m):

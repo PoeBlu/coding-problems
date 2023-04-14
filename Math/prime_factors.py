@@ -31,7 +31,7 @@ def prime_factors(n):
 
     # now n is odd
     i = 3
-    while i * i <= n:
+    while i**2 <= n:
         while n % i == 0:
             factors.append(i)
             n //= i

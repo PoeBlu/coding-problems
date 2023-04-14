@@ -47,10 +47,7 @@ def pivoting(arr, left, right, pt):
     pivot_dist = sqr_dist(pt, arr[right])
     new_pivot = left
 
-    # iterate the whole array (without the last element)
-    # and put all elements closer than the pivot (last element) in the first K spots
-    # with the new_pivot we're "counting" how many closer elements are there
-    for j in range(left, right):
+    for j in range(new_pivot, right):
         if sqr_dist(pt, arr[j]) < pivot_dist:
             swap(arr, new_pivot, j)
             new_pivot += 1

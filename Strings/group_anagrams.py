@@ -38,8 +38,7 @@ def group_anagrams(strs):
     return [anagrams[res] for res in anagrams]
 
 def hash_1(st):
-    chars = list(st)
-    chars.sort()
+    chars = sorted(st)
     # or you can use a string as hash, ''.join(chars)
     return tuple(chars)
 

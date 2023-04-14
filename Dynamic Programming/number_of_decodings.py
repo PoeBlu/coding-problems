@@ -21,14 +21,14 @@ Dynamic programming solution. Similar to number_of_smses.py.
 
 def num_decodings(code):
     n = len(code)
-    dp = [0 for i in range(n)]
+    dp = [0 for _ in range(n)]
 
     if n == 0:
         return 0
     dp[0] = 1
     if n == 1:
         return dp[0]
-    dp[1] = (code[1] != '0') + is_valid(code[0:2])
+    dp[1] = (code[1] != '0') + is_valid(code[:2])
 
     for i in range(2, n):
         if code[i] != '0':

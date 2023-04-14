@@ -28,9 +28,7 @@ def find_element_smaller_left_bigger_right(arr):
     right_min = math.inf
 
     # find all mins from the front
-    for i in range(n - 1):
-        left_maxs.append(max(left_maxs[-1], arr[i]))
-
+    left_maxs.extend(max(left_maxs[-1], arr[i]) for i in range(n - 1))
     for i in range(n - 1, -1, -1):
         # check if all left are smaller
         # and all right are bigger

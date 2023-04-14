@@ -38,14 +38,11 @@ def is_valid_sub_bst(node, lower, upper):
         return False
 
     # check left
-    if not is_valid_sub_bst(node.left, lower, node.val):
-        return False
-
-    # check right
-    if not is_valid_sub_bst(node.right, node.val, upper):
-        return False
-
-    return True
+    return (
+        bool(is_valid_sub_bst(node.right, node.val, upper))
+        if is_valid_sub_bst(node.left, lower, node.val)
+        else False
+    )
 
 
 ###########

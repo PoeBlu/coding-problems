@@ -57,9 +57,7 @@ def count_ip_addresses(S, K):
     return dp[n]
 
 def is_valid(S):
-    if (len(S) > 1) and (S[0] == '0'):
-        return False
-    return int(S) <= 255
+    return False if (len(S) > 1) and (S[0] == '0') else int(S) <= 255
 
 
 ###########

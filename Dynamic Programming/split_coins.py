@@ -35,13 +35,9 @@ def split_coins(coins):
                 # if you want to find coins, save the coin here dp[i] = c
                 dp[i] = True
 
-    for i in range(half_sum - 1, -1, -1):
-        if dp[i]:
-            # if you want to print coins, while i>0: print(dp[i]) i -= dp[i]
-            return full_sum - 2 * i
-
-    # not possible
-    return -1
+    return next(
+        (full_sum - 2 * i for i in range(half_sum - 1, -1, -1) if dp[i]), -1
+    )
 
 
 ###########

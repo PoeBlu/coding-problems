@@ -33,12 +33,7 @@ def find_pairs(arr, K):
         # save this number as complement
         complements.add(el)
 
-    # find all unique pairs
-    pairs = []
-    for c in pair_complements:
-        pairs.append((c, K - c))
-
-    return pairs
+    return [(c, K - c) for c in pair_complements]
 
 
 ###########

@@ -31,12 +31,7 @@ Sum only the positive differences between neighbouring elements.
 ############
 
 def max_profit(prices):
-    total = 0
-
-    for i in range(1, len(prices)):
-        total += max(0, prices[i] - prices[i - 1])
-
-    return total
+    return sum(max(0, prices[i] - prices[i - 1]) for i in range(1, len(prices)))
 
 
 ###########

@@ -66,17 +66,10 @@ def dfs(coord, matrix):
 
     # update the matrix, the matrix is passed by reference
     matrix[i][j] = 0
-    # this position is part of river
-    size = 1
-
     # directions: down, left, up, right
     dirs = [(-1, 0), (0, -1), (1, 0), (0, 1)]
 
-    # check all 4 directions
-    for d in dirs:
-        size += dfs((i + d[0], j + d[1]), matrix)
-
-    return size
+    return 1 + sum(dfs((i + d[0], j + d[1]), matrix) for d in dirs)
 
 
 ###########

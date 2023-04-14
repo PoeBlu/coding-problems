@@ -70,10 +70,7 @@ Using a loop (without a recursion) compute the power of N of the matrix.
 ##############
 
 def nth_fibonacci_1(n):
-    if (n == 0) or (n == 1):
-        return n
-
-    return nth_fibonacci_1(n - 1) + nth_fibonacci_1(n - 2)
+    return n if n in [0, 1] else nth_fibonacci_1(n - 1) + nth_fibonacci_1(n - 2)
 
 
 ##############
@@ -99,7 +96,7 @@ def nth_fibonacci_2(n):
 ##############
 
 def nth_fibonacci_3(n):
-    dp = [0 for i in range(max(2, n + 1))]
+    dp = [0 for _ in range(max(2, n + 1))]
     dp[1] = 1
 
     for i in range(2, n + 1):
@@ -115,7 +112,7 @@ def nth_fibonacci_3(n):
 def nth_fibonacci_4(n):
     dp0, dp1 = 0, 1
 
-    for i in range(n):
+    for _ in range(n):
         dp0, dp1 = dp1, dp0 + dp1
 
     return dp0
@@ -150,7 +147,7 @@ def nth_fibonacci_5(n):
     fib = [[1, 1], [1, 0]]
     res = [[1, 1], [1, 0]]
 
-    for i in range(n):
+    for _ in range(n):
         matrix_mult(res, fib)
 
     return res[1][1] # Fn-1 (or change the range(n-1) and use Fn => res[0][1] or res[1][0])
@@ -168,7 +165,7 @@ def nth_fibonacci_6(n):
     return res[1][1]
 
 def matrix_pow(mat, n):
-    if (n == 0) or (n == 1):
+    if n in [0, 1]:
         return
 
     # first compute the power of n/2

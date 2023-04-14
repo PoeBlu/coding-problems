@@ -42,7 +42,7 @@ def max_profit_with_k_transactions(prices, k):
     # (according to this, can't exists more transactions than the number of the prices/days)
     k = min(k, days)
     # create space optimized dp matrix
-    dp = [[0 for j in range(days)] for i in range(2)]
+    dp = [[0 for _ in range(days)] for _ in range(2)]
 
     for t in range(k):
         max_prev = -math.inf

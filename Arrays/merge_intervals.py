@@ -35,9 +35,7 @@ def merge_intervals(intervals):
 
     # sort the intervals
     intervals.sort(key=lambda interval: interval[0])
-    mergedIntervals = []
-    mergedIntervals.append(intervals[0])
-
+    mergedIntervals = [intervals[0]]
     for i in range(1, n):
         # check if this interval belongs to the last created interval
         if intervals[i][0] <= mergedIntervals[-1][1] + 1:
